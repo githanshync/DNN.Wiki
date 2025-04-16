@@ -118,55 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Administration.Text" xml:space="preserve">
-    <value>Wiki Configuration</value>
+    <value>Configuración Wiki</value>
   </data>
   <data name="Anonymous.Text" xml:space="preserve">
-    <value>Anonymous</value>
+    <value>Anónimo</value>
   </data>
   <data name="BaseCreateHistoryTableEmpty.Text" xml:space="preserve">
     <value>This topic has no history...</value>
   </data>
   <data name="BaseCreateTableModBy.Text" xml:space="preserve">
-    <value>Updated By</value>
+    <value>   Actualizado por</value>
   </data>
   <data name="BaseCreateTableModDate.Text" xml:space="preserve">
-    <value>Updated On</value>
+    <value>   Actualizado en</value>
   </data>
   <data name="BaseCreateTableNoResults.Text" xml:space="preserve">
     <value>List has no results...</value>
   </data>
   <data name="BaseCreateTableTitle.Text" xml:space="preserve">
-    <value>Title</value>
+    <value>Título</value>
   </data>
   <data name="BaseCreateTableTopic.Text" xml:space="preserve">
     <value>Topic</value>
   </data>
   <data name="CancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="Comment.Text" xml:space="preserve">
-    <value>Comments</value>
+    <value>Comentarios</value>
   </data>
   <data name="CommentsCount.Text" xml:space="preserve">
-    <value>[{0}] Comments</value>
+    <value>[{0}] Commentarios</value>
   </data>
   <data name="Email.Text" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="ErrorPleaseEnterComments.Text" xml:space="preserve">
-    <value>Please enter some comments.</value>
+    <value>Por favor ingrese algunos comentarios.</value>
   </data>
   <data name="ErrorPleaseEnterEmail.Text" xml:space="preserve">
-    <value>Please enter an email address</value>
+    <value>Por favor ingrese un email</value>
   </data>
   <data name="ErrorPleaseEnterName.Text" xml:space="preserve">
-    <value>Please enter a name.</value>
+    <value>Por favor ingrese un nombre</value>
   </data>
   <data name="ErrorPleaseEnterShorterComment.Text" xml:space="preserve">
     <value>Please enter {0} or less characters for the comment.</value>
   </data>
   <data name="ErrorTotalFailure.Text" xml:space="preserve">
-    <value>Failed to Add Record! Please Resubmit or contact the site admin.</value>
+    <value>Falló al Agregar Registro! Please Resubmit or contact the site admin.</value>
   </data>
   <data name="HideNavigation.Text" xml:space="preserve">
     <value>Hide Navigation</value>
@@ -175,7 +175,7 @@
     <value>(history as of {0})</value>
   </data>
   <data name="HistoryBack.Text" xml:space="preserve">
-    <value>&lt;&lt; Back</value>
+    <value>&lt;&lt; Atrás</value>
   </data>
   <data name="HistoryListHeader.Text" xml:space="preserve">
     <value>Select what version of this topic you want to review.</value>
@@ -190,7 +190,7 @@
     <value>History for</value>
   </data>
   <data name="Home.Text" xml:space="preserve">
-    <value>Home</value>
+    <value>Inicio</value>
   </data>
   <data name="IndexOff.Text" xml:space="preserve">
     <value>Index (Show)</value>
@@ -199,76 +199,76 @@
     <value>Index (Hide)</value>
   </data>
   <data name="Name.Text" xml:space="preserve">
-    <value>Name</value>
+    <value>Nombre</value>
   </data>
   <data name="PageRatingsNotRatedYet.Text" xml:space="preserve">
-    <value>Not Rated Yet</value>
+    <value>Aún sin Calificar</value>
   </data>
   <data name="PageRatingsTitle.Text" xml:space="preserve">
-    <value>Rating:</value>
+    <value>Calificación:</value>
   </data>
   <data name="RatingsAverageRatingTitle.Text" xml:space="preserve">
-    <value>Average rating:</value>
+    <value>Calificación promedio:</value>
   </data>
   <data name="RatingsHighRating.Text" xml:space="preserve">
-    <value>Great</value>
+    <value>Genial</value>
   </data>
   <data name="RatingsLowRating.Text" xml:space="preserve">
-    <value>Poor</value>
+    <value>Pobre  </value>
   </data>
   <data name="RatingsNotRatedYet.Text" xml:space="preserve">
-    <value>No Ratings Yet</value>
+    <value>Aún sin Calificar</value>
   </data>
   <data name="RatingsNumberOf.Text" xml:space="preserve">
-    <value>Number of Ratings : {0}</value>
+    <value>Número de Calificaciones : {0}</value>
   </data>
   <data name="RatingsPageRated.Text" xml:space="preserve">
-    <value>Thank you for rating this Page!</value>
+    <value>Gracias por calificar esta Página!</value>
   </data>
   <data name="RatingsRateThisPage.Text" xml:space="preserve">
-    <value>Rate This Page:</value>
+    <value>Califica esta Página:  </value>
   </data>
   <data name="RatingsSubmitRating.Text" xml:space="preserve">
-    <value>Rate Content</value>
+    <value>Calificar Contenido</value>
   </data>
   <data name="RCLast24h.Text" xml:space="preserve">
-    <value>Last 24 Hours</value>
+    <value>Últimas 24 horas</value>
   </data>
   <data name="RCLast7d.Text" xml:space="preserve">
-    <value>Last 7 days</value>
+    <value>Últimos 7 días</value>
   </data>
   <data name="RCLastMonth.Text" xml:space="preserve">
-    <value>Last Month</value>
+    <value>Último Mes</value>
   </data>
   <data name="RCTitle.Text" xml:space="preserve">
-    <value>Recent Changes</value>
+    <value>Cambios Recientes</value>
   </data>
   <data name="RecentChanges.Text" xml:space="preserve">
-    <value>Recent Changes</value>
+    <value>Cambios Recientes</value>
   </data>
   <data name="Search.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>Buscar</value>
   </data>
   <data name="SearchExec.Text" xml:space="preserve">
-    <value>Go</value>
+    <value>Ir</value>
   </data>
   <data name="SearchFieldLabel.Text" xml:space="preserve">
-    <value>Search:</value>
+    <value>Buscar:</value>
   </data>
   <data name="SearchTitleBasic.Text" xml:space="preserve">
-    <value>Search Wiki</value>
+    <value>Buscar Wiki</value>
   </data>
   <data name="ShowNavigation.Text" xml:space="preserve">
     <value>Show Navigation</value>
   </data>
   <data name="StartAddComment.Text" xml:space="preserve">
-    <value>Add Comment</value>
+    <value>Agregar Comentario</value>
   </data>
   <data name="StartCommentCount.Text" xml:space="preserve">
     <value>Start Comment Count</value>
   </data>
   <data name="StartCommentsSection.Text" xml:space="preserve">
-    <value>Comments</value>
+    <value>Comentarios</value>
   </data>
   <data name="StartDeleteWarning.Text" xml:space="preserve">
     <value>Deleting this page will remove it and all of its history. Do you want to continue with the delete?</value>

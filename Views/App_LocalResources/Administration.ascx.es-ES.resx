@@ -117,7 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TitleLbl.Text" xml:space="preserve">
-    <value>All Wiki Pages</value>
+  <data name="CancelButton.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CommentSettings.Text" xml:space="preserve">
+    <value>Configuración de Comentarios</value>
+  </data>
+  <data name="ControlTitle_administration.Text" xml:space="preserve">
+    <value>Configuración Wiki</value>
+  </data>
+  <data name="DNNSecurityChk.Help" xml:space="preserve">
+    <value>Use DotNetNuke Security for edit content permissions</value>
+  </data>
+  <data name="DNNSecurityChk.Text" xml:space="preserve">
+    <value>Use Module Security</value>
+  </data>
+  <data name="ExpandAll.Text" xml:space="preserve">
+    <value>Expandir Todo</value>
+  </data>
+  <data name="lblActivateComments.Help" xml:space="preserve">
+    <value>Activate comments on all existing entries.</value>
+  </data>
+  <data name="lblActivateComments.Text" xml:space="preserve">
+    <value>Enable on Existing</value>
+  </data>
+  <data name="lblActivateRatings.Help" xml:space="preserve">
+    <value>Activate ratings on all pages after settings are saved!</value>
+  </data>
+  <data name="lblActivateRatings.Text" xml:space="preserve">
+    <value>Enable on Existing</value>
+  </data>
+  <data name="lblAllowPageComments.Help" xml:space="preserve">
+    <value>Allow comments for the Wiki</value>
+  </data>
+  <data name="lblAllowPageComments.Text" xml:space="preserve">
+    <value>Allow Pages Comments</value>
+  </data>
+  <data name="lblAllowPageRatings.Help" xml:space="preserve">
+    <value>Allow Page Ratings</value>
+  </data>
+  <data name="lblAllowPageRatings.Text" xml:space="preserve">
+    <value>Allow Page Ratings</value>
+  </data>
+  <data name="lblDefaultCommentsMode.Help" xml:space="preserve">
+    <value>Should commends be enabled by default when creating a topic?</value>
+  </data>
+  <data name="lblDefaultCommentsMode.Text" xml:space="preserve">
+    <value>Enable Comments by Default</value>
+  </data>
+  <data name="lblDefaultRatingMode.Help" xml:space="preserve">
+    <value>Enable ratings by default in add topic control</value>
+  </data>
+  <data name="lblDefaultRatingMode.Text" xml:space="preserve">
+    <value>Enable Ratings by Default</value>
+  </data>
+  <data name="lblNotifyMethodCustomRoles.Help" xml:space="preserve">
+    <value>Allow users from custom roles to subscribe to notifications.</value>
+  </data>
+  <data name="lblNotifyMethodCustomRoles.Text" xml:space="preserve">
+    <value>Use Custom Notify Roles</value>
+  </data>
+  <data name="lblNotifyMethodEditRoles.Help" xml:space="preserve">
+    <value>Allow users with Edit rights to subscribe to notifications.</value>
+  </data>
+  <data name="lblNotifyMethodEditRoles.Text" xml:space="preserve">
+    <value>Notify Editors</value>
+  </data>
+  <data name="lblNotifyMethodUserComments.Help" xml:space="preserve">
+    <value>Allow users to be notified when new comments are added.</value>
+  </data>
+  <data name="lblNotifyMethodUserComments.Text" xml:space="preserve">
+    <value>User Comments</value>
+  </data>
+  <data name="lblNotifyMethodViewRoles.Help" xml:space="preserve">
+    <value>Allow users with View rights to subscribe to notifications.</value>
+  </data>
+  <data name="lblNotifyMethodViewRoles.Text" xml:space="preserve">
+    <value>Notify Viewers</value>
+  </data>
+  <data name="lblNotifyRoles.Help" xml:space="preserve">
+    <value>Custom roles that are allowed to subscribe to notifications</value>
+  </data>
+  <data name="lblNotifyRoles.Text" xml:space="preserve">
+    <value>Custom Notification Roles</value>
+  </data>
+  <data name="NotificationSettings.Text" xml:space="preserve">
+    <value>Notification Settings</value>
+  </data>
+  <data name="RatingSettings.Text" xml:space="preserve">
+    <value>Configuraciones de Calificación</value>
+  </data>
+  <data name="SaveButton.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SecuritySettings.Text" xml:space="preserve">
+    <value>Configuraciones de Seguridad</value>
+  </data>
+  <data name="WikiSecurity.Help" xml:space="preserve">
+    <value>If you disable Module Security you can assign which roles are allowed to edit your wiki.</value>
+  </data>
+  <data name="WikiSecurity.Text" xml:space="preserve">
+    <value>Wiki Editor Roles</value>
   </data>
 </root>

@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TitleLbl.Text" xml:space="preserve">
-    <value>All Wiki Pages</value>
+  <data name="StartAdd.Text" xml:space="preserve">
+    <value>Agregar Tema Wiki</value>
+  </data>
+  <data name="StartEdit.Text" xml:space="preserve">
+    <value>Editar Tema Wiki</value>
+  </data>
+  <data name="StartViewHistory.Text" xml:space="preserve">
+    <value>Ver Historial del Tema</value>
   </data>
 </root>

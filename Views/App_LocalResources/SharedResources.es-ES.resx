@@ -117,7 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TitleLbl.Text" xml:space="preserve">
-    <value>All Wiki Pages</value>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CommentLength.Text" xml:space="preserve">
+    <value>Please enter {0} or less characters for the comment.</value>
+  </data>
+  <data name="Comments.Text" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="CommentsNotification.Text" xml:space="preserve">
+    <value>Subscribe to E-Mail Notifications</value>
+  </data>
+  <data name="CommentsSummary.Summary" xml:space="preserve">
+    <value>Comments Design Table</value>
+  </data>
+  <data name="ConfirmDelete.Text" xml:space="preserve">
+    <value>Are you sure you want to delete?</value>
+  </data>
+  <data name="Delete.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="DeleteComment.Text" xml:space="preserve">
+    <value>Eliminar comentario</value>
+  </data>
+  <data name="Dots.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EnterAName.Text" xml:space="preserve">
+    <value>Por favor ingrese un nombre.</value>
+  </data>
+  <data name="EnterAnEmailAddress.Text" xml:space="preserve">
+    <value>Please enter an email address.</value>
+  </data>
+  <data name="EnterSomeComments.Text" xml:space="preserve">
+    <value>Por favor ingrese algunos comentarios.</value>
+  </data>
+  <data name="ExampleComments.Text" xml:space="preserve">
+    <value>Example Comments</value>
+  </data>
+  <data name="ExampleEmail.Text" xml:space="preserve">
+    <value>Example Email</value>
+  </data>
+  <data name="ExampleName.Text" xml:space="preserve">
+    <value>Example Name</value>
+  </data>
+  <data name="Failed.Text" xml:space="preserve">
+    <value>Failed to Add Record! Please Resubmit or contact the site admin.</value>
+  </data>
+  <data name="FeedBack.Text" xml:space="preserve">
+    <value>Feedback({0})</value>
+  </data>
+  <data name="Name.Text" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NoComments.Text" xml:space="preserve">
+    <value>Aún sin Comentarios</value>
+  </data>
+  <data name="NoComments.Text1" xml:space="preserve">
+    <value>Aún sin Comentarios</value>
+  </data>
+  <data name="NotificationBody.Text" xml:space="preserve">
+    <value>&lt;p&gt;&lt;strong&gt;[NAME]&lt;/strong&gt; posted &lt;i&gt;"[COMMENT]"&lt;/i&gt;&lt;br/&gt;@ &lt;a href="[URL]"&gt;[URL]&lt;/a&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="NotificationSubject.Text" xml:space="preserve">
+    <value>WikiComment Notification</value>
+  </data>
+  <data name="PostComment.Text" xml:space="preserve">
+    <value>Post Comment</value>
+  </data>
+  <data name="PostedAt.Text" xml:space="preserve">
+    <value>Posteado En</value>
   </data>
 </root>

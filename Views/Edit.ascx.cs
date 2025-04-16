@@ -30,6 +30,7 @@ using DotNetNuke.UI.Utilities;
 using DotNetNuke.Wiki.BusinessObjects.Exceptions;
 using DotNetNuke.Wiki.BusinessObjects.Models;
 using DotNetNuke.Wiki.Utilities;
+using System.Net;
 using System.Web;
 
 namespace DotNetNuke.Wiki.Views
@@ -321,7 +322,8 @@ namespace DotNetNuke.Wiki.Views
             SharedEnum.CrudOperation crudOperation = SharedEnum.CrudOperation.Insert;
             try
             {
-                DotNetNuke.Security.PortalSecurity objSec = new DotNetNuke.Security.PortalSecurity();
+                //DotNetNuke.Security.PortalSecurity objSec = new DotNetNuke.Security.PortalSecurity(); // it's obsolet
+                /*
                 this.SaveTopic(
                     HttpUtility.HtmlDecode(
                     objSec.InputFilter(objSec.InputFilter(this.teContent.Text, PortalSecurity.FilterFlag.NoMarkup), PortalSecurity.FilterFlag.NoScripting)),
@@ -330,6 +332,17 @@ namespace DotNetNuke.Wiki.Views
                     objSec.InputFilter(WikiMarkup.DecodeTitle(this.txtTitle.Text.Trim()), PortalSecurity.FilterFlag.NoMarkup),
                     objSec.InputFilter(this.txtDescription.Text.Trim(), PortalSecurity.FilterFlag.NoMarkup),
                     objSec.InputFilter(this.txtKeywords.Text.Trim(), PortalSecurity.FilterFlag.NoMarkup),
+                    out crudOperation);
+                */
+                // Replace the use of PortalSecurity.FilterFlag.NoMarkup and NoScripting
+                this.SaveTopic(
+                    WebUtility.HtmlDecode(
+                        WebUtility.HtmlEncode(this.teContent.Text)),
+                    this.AllowDiscuss.Checked,
+                    this.AllowRating.Checked,
+                    WebUtility.HtmlEncode(WikiMarkup.DecodeTitle(this.txtTitle.Text.Trim())),
+                    WebUtility.HtmlEncode(this.txtDescription.Text.Trim()),
+                    WebUtility.HtmlEncode(this.txtKeywords.Text.Trim()),
                     out crudOperation);
             }
             catch (TopicValidationException exc)
