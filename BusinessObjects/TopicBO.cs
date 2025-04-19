@@ -24,6 +24,7 @@
 #endregion Copyright
 
 using DotNetNuke.Entities.Users;
+using DotNetNuke.Security.Roles;
 using DotNetNuke.Wiki.BusinessObjects.Models;
 using DotNetNuke.Wiki.Utilities;
 using System.Collections.Generic;
@@ -179,13 +180,22 @@ namespace DotNetNuke.Wiki.BusinessObjects
                         // Compile our view users, only if enabled
                         if (fetchViewUsers)
                         {
-                            foreach (string role in objModule.AuthorizedViewRoles.Trim(new char[] { ';' }).Split(new char[] { ';' }))
+                            // Obtener los roles autorizados para ver el módulo
+                            var authorizedRoles = objModule.ModulePermissions
+                                .Where(permission => permission.PermissionKey == "VIEW" && permission.AllowAccess)
+                                .Select(permission => permission.RoleName)
+                                .ToList();
+
+                            //foreach (string role in objModule.AuthorizedViewRoles.Trim(new char[] { ';' }).Split(new char[] { ';' }))
+                            foreach (string role in authorizedRoles)
                             {
                                 if (role.ToLower().Equals("all users"))
                                 {
                                     // Trap against fake roles
-                                    var arrUsers =
-                                        DotNetNuke.Entities.Users.UserController.GetUsers(DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings().PortalId).OfType<UserInfo>();
+                                    //var arrUsers =
+                                    //  DotNetNuke.Entities.Users.UserController.GetUsers(DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings().PortalId).OfType<UserInfo>();
+                                    var arrUsers = UserController.GetUsers(objModule.PortalID).OfType<UserInfo>(); //get all users from portal
+
                                     foreach (DotNetNuke.Entities.Users.UserInfo objUser in arrUsers)
                                     {
                                         if (!lstUsers.Contains(objUser.Email))
@@ -196,14 +206,31 @@ namespace DotNetNuke.Wiki.BusinessObjects
                                 }
                                 else
                                 {
-                                    // This role should be legit
-                                    foreach (DotNetNuke.Entities.Users.UserRoleInfo objUserRole in
-                                        objRoles.GetUserRolesByRoleName(objModule.PortalID, role))
+                                    // create a instance of RoleController
+                                    var roleController = new RoleController();
+
+                                    // Get the specific role by name 
+                                    var roleInfo = roleController.GetRoles(objModule.PortalID, r => r.RoleName == role).FirstOrDefault();
+
+                                    if (roleInfo != null) // new if
                                     {
-                                        if (!lstUsers.Contains(objUserRole.Email))
+                                        // get all users of portal
+                                        var users = UserController.GetUsers(objModule.PortalID).OfType<UserInfo>();
+
+
+                                        // This role should be legit
+                                        //foreach (DotNetNuke.Entities.Users.UserRoleInfo objUserRole in // with error
+                                        //objRoles.GetUserRolesByRoleName(objModule.PortalID, role))  // with error
+                                        foreach (UserInfo user in users)  //new foreach
                                         {
-                                            lstUsers.Add(objUserRole.Email);
+                                            //if (!lstUsers.Contains(objUserRole.Email))
+                                            if (user.IsInRole(roleInfo.RoleName) && !lstUsers.Contains(user.Email)) //new if
+                                            {
+                                                //lstUsers.Add(objUserRole.Email);
+                                                lstUsers.Add(user.Email); //new
+                                            }
                                         }
+
                                     }
                                 }
                             }
@@ -214,8 +241,15 @@ namespace DotNetNuke.Wiki.BusinessObjects
                         {
                             if (fetchUsingDNNRoles)
                             {
+                                // Obtener los roles autorizados para editar el módulo
+                                var authorizedEditRoles = objModule.ModulePermissions
+                                    .Where(permission => permission.PermissionKey == "EDIT" && permission.AllowAccess)
+                                    .Select(permission => permission.RoleName)
+                                    .ToList();
+
                                 // Fetch using dnn edit roles
-                                foreach (string role in objModule.AuthorizedEditRoles.Trim(new char[] { ';' }).Split(new char[] { ';' }))
+                                //foreach (string role in objModule.AuthorizedEditRoles.Trim(new char[] { ';' }).Split(new char[] { ';' }))
+                                foreach (string role in authorizedEditRoles)
                                 {
                                     if (role.ToLower().Equals("all users"))
                                     {
@@ -223,13 +257,31 @@ namespace DotNetNuke.Wiki.BusinessObjects
                                     }
                                     else
                                     {
-                                        // This role should be legit
-                                        foreach (DotNetNuke.Entities.Users.UserRoleInfo objUserRole in objRoles.GetUserRolesByRoleName(objModule.PortalID, role))
+                                        // Get users from specific role 
+                                        var roleController = new RoleController(); //new
+
+                                        // get the specific rol by name
+                                        var roleInfo = roleController.GetRoles(objModule.PortalID, r => r.RoleName == role).FirstOrDefault();
+
+                                        if (roleInfo != null)
                                         {
-                                            if (!lstUsers.Contains(objUserRole.Email))
+                                            // get all user from portal
+                                            var users = UserController.GetUsers(objModule.PortalID).OfType<UserInfo>(); //new
+
+                                            // This role should be legit
+                                            //foreach (DotNetNuke.Entities.Users.UserRoleInfo objUserRole in objRoles.GetUserRolesByRoleName(objModule.PortalID, role))
+                                            foreach (UserInfo user in users) //new foreach
                                             {
-                                                lstUsers.Add(objUserRole.Email);
+
+                                                //if (!lstUsers.Contains(objUserRole.Email))
+                                                if (user.IsInRole(roleInfo.RoleName) && !lstUsers.Contains(user.Email)) //new if
+                                                {
+                                                    //lstUsers.Add(objUserRole.Email);
+                                                    lstUsers.Add(user.Email); //new
+                                                }
                                             }
+                                            
+
                                         }
                                     }
                                 }
@@ -239,11 +291,25 @@ namespace DotNetNuke.Wiki.BusinessObjects
                                 // Fetch using custom wiki edit roles
                                 foreach (string role in wikiSettings.ContentEditorRoles.Trim(new char[] { ';' }).Split(new char[] { ';' }))
                                 {
-                                    foreach (DotNetNuke.Entities.Users.UserRoleInfo objUserRole in objRoles.GetUserRolesByRoleName(objModule.PortalID, role))
+                                    // get the specific role by name
+                                    var roleController = new RoleController();  //new
+                                    var roleInfo = roleController.GetRoles(objModule.PortalID, r => r.RoleName == role).FirstOrDefault(); //new
+
+                                    if (roleInfo != null) // new if
                                     {
-                                        if (!lstUsers.Contains(objUserRole.Email))
+                                        // Get all users from portal 
+                                        var users = UserController.GetUsers(objModule.PortalID).OfType<UserInfo>(); //new
+
+                                        //foreach (DotNetNuke.Entities.Users.UserRoleInfo objUserRole in objRoles.GetUserRolesByRoleName(objModule.PortalID, role))
+                                        foreach (UserInfo user in users) // new foreach
                                         {
-                                            lstUsers.Add(objUserRole.Email);
+                                            //if (!lstUsers.Contains(objUserRole.Email))
+                                            // Verify if the user is from specific role
+                                            if (user.IsInRole(roleInfo.RoleName) && !lstUsers.Contains(user.Email))  //new if
+                                            {
+                                                //lstUsers.Add(objUserRole.Email);
+                                                lstUsers.Add(user.Email);
+                                            }
                                         }
                                     }
                                 }

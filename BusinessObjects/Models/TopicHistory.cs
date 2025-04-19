@@ -209,7 +209,8 @@ namespace DotNetNuke.Wiki.BusinessObjects.Models
             get
             {
                 UserInfo user = UserController.GetUserById(
-                    PortalController.GetCurrentPortalSettings().PortalId,
+                    //PortalController.GetCurrentPortalSettings().PortalId, // it's obsolet
+                    PortalController.Instance.GetCurrentSettings().PortalId,
                     this.UpdatedByUserID);
                 if (user != null)
                 {
