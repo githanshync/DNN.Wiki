@@ -28,6 +28,7 @@ using DotNetNuke.Wiki.BusinessObjects;
 using DotNetNuke.Wiki.BusinessObjects.Models;
 using System;
 using System.ComponentModel;
+using System.Net;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -544,10 +545,14 @@ namespace DotNetNuke.Wiki.Utilities
                 var comment = new Comment
                 {
                     ParentId = this.ParentId,
-                    Name = objSec.InputFilter(this.txtName.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoMarkup),
-                    Email = objSec.InputFilter(this.txtEmail.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoMarkup),
-                    CommentText = objSec.InputFilter(commentText, PortalSecurity.FilterFlag.NoMarkup),
-                    Ip = objSec.InputFilter(this.Context.Request.ServerVariables["REMOTE_ADDR"], DotNetNuke.Security.PortalSecurity.FilterFlag.NoMarkup),
+                    //Name = objSec.InputFilter(this.txtName.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoMarkup), // it's obsolet
+                    Name = WebUtility.HtmlEncode(this.txtName.Text),
+                    //Email = objSec.InputFilter(this.txtEmail.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoMarkup), //it's obsolet
+                    Email = WebUtility.HtmlEncode(this.txtEmail.Text),
+                    //CommentText = objSec.InputFilter(commentText, PortalSecurity.FilterFlag.NoMarkup), // it's obsolet
+                    CommentText = WebUtility.HtmlEncode(commentText),
+                    //Ip = objSec.InputFilter(this.Context.Request.ServerVariables["REMOTE_ADDR"], DotNetNuke.Security.PortalSecurity.FilterFlag.NoMarkup),
+                    Ip = WebUtility.HtmlEncode(this.Context.Request.ServerVariables["REMOTE_ADDR"]),
                     EmailNotify = this.chkSubscribeToNotifications.Checked,
                     Datetime = DateTime.Now
                 };

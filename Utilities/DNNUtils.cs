@@ -23,20 +23,25 @@
 
 #endregion Copyright
 
+using DotNetNuke.Abstractions;
 using DotNetNuke.Common;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Host;
+using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Services.Journal;
 using DotNetNuke.Services.Localization;
 using DotNetNuke.Services.Mail;
+using DotNetNuke.Services.Search;
 using DotNetNuke.Wiki.BusinessObjects;
 using DotNetNuke.Wiki.BusinessObjects.Models;
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
-
+using Microsoft.Extensions.DependencyInjection;
+using DotNetNuke.Abstractions.Portals;
+using DotNetNuke.Framework; // new
 namespace DotNetNuke.Wiki.Utilities
 {
     /// <summary>
@@ -67,12 +72,15 @@ namespace DotNetNuke.Wiki.Utilities
 
                 if (lstEmailsAddresses.Count > 0)
                 {
-                    DotNetNuke.Entities.Portals.PortalSettings objPortalSettings = DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings();
+                    //DotNetNuke.Entities.Portals.PortalSettings objPortalSettings = DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings(); // it's obsolet
+                    DotNetNuke.Entities.Portals.PortalSettings objPortalSettings = (PortalSettings)DotNetNuke.Entities.Portals.PortalController.Instance.GetCurrentSettings();
+                    
                     string strResourceFile = Globals.ApplicationPath + "/DesktopModules/Wiki/Views/" + Localization.LocalResourceDirectory + "/" + Localization.LocalSharedResourceFile;
                     string strSubject = Localization.GetString("NotificationSubject", strResourceFile);
                     string strBody = Localization.GetString("NotificationBody", strResourceFile);
 
                     string redirectUrl = DotNetNuke.Common.Globals.NavigateURL(objPortalSettings.ActiveTab.TabID, objPortalSettings, string.Empty, "topic=" + WikiMarkup.EncodeTitle(topic.Name));
+                                       
                     strBody = strBody.Replace("[URL]", redirectUrl);
 
                     strBody = strBody.Replace("[NAME]", name);
@@ -134,7 +142,8 @@ namespace DotNetNuke.Wiki.Utilities
         {
             if (HttpContext.Current != null && HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                UserInfo user = UserController.GetCurrentUserInfo();
+                //UserInfo user = UserController.GetCurrentUserInfo(); // it's obsolet
+                UserInfo user = UserController.Instance.GetCurrentUserInfo();
                 if (user != null)
                 {
                     // Post to DotnetNuke Journal
@@ -159,7 +168,15 @@ namespace DotNetNuke.Wiki.Utilities
                     //// http: //www.dnnsoftware.com/wiki/loc/history/Page/Journal/Revision/11
 
                     journalItem.Title = topicName;
-                    journalController.SaveJournalItem(journalItem, currentTab); // saving
+
+                    // Get object ModuleInfo // new
+                    var moduleInfo = new ModuleInfo
+                    {
+                        ModuleID = PortalSettings.Current.ActiveTab.ModuleID,
+                        TabID = PortalSettings.Current.ActiveTab.TabID
+                    };
+                    //journalController.SaveJournalItem(journalItem, currentTab); // saving // it's obsolet
+                    journalController.SaveJournalItem(journalItem, moduleInfo);
                 }
             }
         }

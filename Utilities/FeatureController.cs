@@ -30,10 +30,12 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Services.Localization;
 using DotNetNuke.Services.Search;
+using DotNetNuke.Services.Search.Entities;
 using DotNetNuke.Wiki.BusinessObjects;
 using DotNetNuke.Wiki.BusinessObjects.Models;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Xml;
@@ -51,7 +53,8 @@ namespace DotNetNuke.Wiki.Utilities
     /// populate with your own data.</para> <para>uncomment the interfaces to add the support.
     /// </para>
     /// </summary>
-    public class FeatureController : IPortable, ISearchable // , IUpgradeable
+    //public class FeatureController : IPortable, ISearchable // , IUpgradeable
+    public class FeatureController : ModuleSearchBase, IPortable // , IUpgradeable
     {
         //// Implements IUpgradeable
 
@@ -69,71 +72,112 @@ namespace DotNetNuke.Wiki.Utilities
         /// </summary>
         /// <param name="modInfo">The module information.</param>
         /// <returns>Topics that meet the search criteria.</returns>
-        public SearchItemInfoCollection GetSearchItems(ModuleInfo modInfo)
+        //public SearchItemInfoCollection GetSearchItems(ModuleInfo modInfo)
+        
+        //{
+        //    using (UnitOfWork uOw = new UnitOfWork())
+        //    {
+        //        TopicBO topicBo = new TopicBO(uOw);
+
+        //        SearchItemInfoCollection searchItemCollection = new SearchItemInfoCollection();
+        //        var topics = topicBo.GetAllByModuleID(modInfo.ModuleID);
+        //        UserController uc = new UserController();
+
+        //        foreach (var topic in topics)
+        //        {
+        //            SearchItemInfo searchItem = new SearchItemInfo();
+
+        //            string strContent = null;
+        //            string strDescription = null;
+        //            string strTitle = null;
+        //            if (!string.IsNullOrWhiteSpace(topic.Title))
+        //            {
+        //                strTitle = topic.Title;
+        //            }
+        //            else
+        //            {
+        //                strTitle = topic.Name;
+        //            }
+
+        //            if (topic.Cache != null)
+        //            {
+        //                strContent = topic.Cache;
+        //                strContent += " " + topic.Keywords;
+        //                strContent += " " + topic.Description;
+
+        //                strDescription = HtmlUtils.Shorten(HtmlUtils.Clean(HttpUtility.HtmlDecode(topic.Cache), false), 100,
+        //                    Localization.GetString("Dots", this.mSharedResourceFile));
+        //            }
+        //            else
+        //            {
+        //                strContent = topic.Content;
+        //                strContent += " " + topic.Keywords;
+        //                strContent += " " + topic.Description;
+
+        //                strDescription = HtmlUtils.Shorten(HtmlUtils.Clean(HttpUtility.HtmlDecode(topic.Content), false), 100,
+        //                    Localization.GetString("Dots", this.mSharedResourceFile));
+        //            }
+
+        //            int userID = 0;
+
+        //            userID = Null.NullInteger;
+        //            if (topic.UpdatedByUserID != -9999)
+        //            {
+        //                userID = topic.UpdatedByUserID;
+        //            }
+
+        //            searchItem = new SearchItemInfo(strTitle, strDescription, userID, topic.UpdateDate, modInfo.ModuleID, topic.Name, strContent, "topic=" + WikiMarkup.EncodeTitle(topic.Name));
+
+        //            //// New SearchItemInfo(ModInfo.ModuleTitle & "-" & strTitle, strDescription,
+        //            //// userID, topic.UpdateDate, ModInfo.ModuleID, topic.Name, strContent, _
+        //            //// "topic=" & WikiMarkup.EncodeTitle(topic.Name))
+
+        //            searchItemCollection.Add(searchItem);
+        //        }
+
+        //        return searchItemCollection;
+        //    }
+        //}
+
+
+
+        ///
+        /// New Metod
+       ///
+        public override IList<SearchDocument> GetModifiedSearchDocuments(ModuleInfo moduleInfo, DateTime beginDateUtc)
         {
+            var searchDocs = new List<SearchDocument>();
+
             using (UnitOfWork uOw = new UnitOfWork())
             {
                 TopicBO topicBo = new TopicBO(uOw);
-
-                SearchItemInfoCollection searchItemCollection = new SearchItemInfoCollection();
-                var topics = topicBo.GetAllByModuleID(modInfo.ModuleID);
-                UserController uc = new UserController();
+                var topics = topicBo.GetAllByModuleID(moduleInfo.ModuleID);
 
                 foreach (var topic in topics)
                 {
-                    SearchItemInfo searchItem = new SearchItemInfo();
+                    string strContent = topic.Cache ?? topic.Content;
+                    strContent += " " + topic.Keywords + " " + topic.Description;
 
-                    string strContent = null;
-                    string strDescription = null;
-                    string strTitle = null;
-                    if (!string.IsNullOrWhiteSpace(topic.Title))
+                    var searchDoc = new SearchDocument
                     {
-                        strTitle = topic.Title;
-                    }
-                    else
-                    {
-                        strTitle = topic.Name;
-                    }
+                        UniqueKey = topic.TopicID.ToString(),
+                        Title = !string.IsNullOrWhiteSpace(topic.Title) ? topic.Title : topic.Name,
+                        Description = HtmlUtils.Shorten(HtmlUtils.Clean(HttpUtility.HtmlDecode(strContent), false), 100,
+                            Localization.GetString("Dots", this.mSharedResourceFile)),
+                        Body = strContent,
+                        ModifiedTimeUtc = topic.UpdateDate.ToUniversalTime(),
+                        CultureCode = moduleInfo.CultureCode,
+                        ModuleId = moduleInfo.ModuleID,
+                        Url = "topic=" + WikiMarkup.EncodeTitle(topic.Name)
+                    };
 
-                    if (topic.Cache != null)
-                    {
-                        strContent = topic.Cache;
-                        strContent += " " + topic.Keywords;
-                        strContent += " " + topic.Description;
-
-                        strDescription = HtmlUtils.Shorten(HtmlUtils.Clean(HttpUtility.HtmlDecode(topic.Cache), false), 100,
-                            Localization.GetString("Dots", this.mSharedResourceFile));
-                    }
-                    else
-                    {
-                        strContent = topic.Content;
-                        strContent += " " + topic.Keywords;
-                        strContent += " " + topic.Description;
-
-                        strDescription = HtmlUtils.Shorten(HtmlUtils.Clean(HttpUtility.HtmlDecode(topic.Content), false), 100,
-                            Localization.GetString("Dots", this.mSharedResourceFile));
-                    }
-
-                    int userID = 0;
-
-                    userID = Null.NullInteger;
-                    if (topic.UpdatedByUserID != -9999)
-                    {
-                        userID = topic.UpdatedByUserID;
-                    }
-
-                    searchItem = new SearchItemInfo(strTitle, strDescription, userID, topic.UpdateDate, modInfo.ModuleID, topic.Name, strContent, "topic=" + WikiMarkup.EncodeTitle(topic.Name));
-
-                    //// New SearchItemInfo(ModInfo.ModuleTitle & "-" & strTitle, strDescription,
-                    //// userID, topic.UpdateDate, ModInfo.ModuleID, topic.Name, strContent, _
-                    //// "topic=" & WikiMarkup.EncodeTitle(topic.Name))
-
-                    searchItemCollection.Add(searchItem);
+                    searchDocs.Add(searchDoc);
                 }
-
-                return searchItemCollection;
             }
+
+            return searchDocs;
         }
+
 
         /// <summary>
         /// Exports the module.
@@ -147,8 +191,13 @@ namespace DotNetNuke.Wiki.Utilities
                 TopicBO topicBo = new TopicBO(uow);
                 var topics = topicBo.GetAllByModuleID(moduleID);
 
+                //ModuleController mc = new ModuleController(); // it's obsolet
+                //Hashtable settings = mc.GetModuleSettings(moduleID); // it's obsolet
+
+                // After (updated)
                 ModuleController mc = new ModuleController();
-                Hashtable settings = mc.GetModuleSettings(moduleID);
+                ModuleInfo moduleInfo = mc.GetModule(moduleID, -1); // get object ModuleInfo
+                Hashtable settings = moduleInfo.ModuleSettings; // Use property ModuleSettings
 
                 StringWriter strXML = new StringWriter();
                 XmlWriter writer = new XmlTextWriter(strXML);
@@ -228,7 +277,8 @@ namespace DotNetNuke.Wiki.Utilities
                     {
                         node = node_loopVariable;
                         var topic = new Topic();
-                        topic.PortalSettings = PortalController.GetCurrentPortalSettings();
+                        //topic.PortalSettings = PortalController.GetCurrentPortalSettings(); // it's obsolet
+                        topic.PortalSettings = (PortalSettings)PortalController.Instance.GetCurrentSettings(); //new
                         topic.AllowDiscussions = bool.Parse(node.Attributes["AllowDiscussions"].Value);
                         topic.AllowRatings = bool.Parse(node.Attributes["AllowRatings"].Value);
                         topic.Content = node.Attributes["Content"].Value;
