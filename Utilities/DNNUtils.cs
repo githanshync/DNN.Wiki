@@ -58,7 +58,25 @@ namespace DotNetNuke.Wiki.Utilities
         /// <param name="email">The email.</param>
         /// <param name="comment">The comment.</param>
         /// <param name="ipaddress">The IP Address.</param>
-        public static void SendNotifications(
+
+        // new 
+        // inject a INavigationManager'instance in class DNNUtils //
+        /*
+        private readonly INavigationManager _navigationManager;
+
+        public DNNUtils(INavigationManager navigationManager)
+        {
+            _navigationManager = navigationManager;
+        }
+
+        public string GetRedirectUrl(int tabId, string topicName)
+        {
+            return _navigationManager.NavigateURL(tabId, "topic=" + WikiMarkup.EncodeTitle(topicName));
+        }
+        // end of inject //new
+        */
+        public static void SendNotifications( //old
+        //public void SendNotifications( // no static
             UnitOfWork uow,
             Topic topic,
             string name,
@@ -73,14 +91,15 @@ namespace DotNetNuke.Wiki.Utilities
                 if (lstEmailsAddresses.Count > 0)
                 {
                     //DotNetNuke.Entities.Portals.PortalSettings objPortalSettings = DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings(); // it's obsolet
-                    DotNetNuke.Entities.Portals.PortalSettings objPortalSettings = (PortalSettings)DotNetNuke.Entities.Portals.PortalController.Instance.GetCurrentSettings();
+                    DotNetNuke.Entities.Portals.PortalSettings objPortalSettings = (PortalSettings)DotNetNuke.Entities.Portals.PortalController.Instance.GetCurrentSettings(); //new
                     
                     string strResourceFile = Globals.ApplicationPath + "/DesktopModules/Wiki/Views/" + Localization.LocalResourceDirectory + "/" + Localization.LocalSharedResourceFile;
                     string strSubject = Localization.GetString("NotificationSubject", strResourceFile);
                     string strBody = Localization.GetString("NotificationBody", strResourceFile);
 
                     string redirectUrl = DotNetNuke.Common.Globals.NavigateURL(objPortalSettings.ActiveTab.TabID, objPortalSettings, string.Empty, "topic=" + WikiMarkup.EncodeTitle(topic.Name));
-                                       
+                    //string redirectUrl = _navigationManager.NavigateURL(objPortalSettings.ActiveTab.TabID, "topic=" + WikiMarkup.EncodeTitle(topic.Name)); // review
+
                     strBody = strBody.Replace("[URL]", redirectUrl);
 
                     strBody = strBody.Replace("[NAME]", name);

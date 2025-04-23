@@ -274,9 +274,9 @@
     <value>Deleting this page will remove it and all of its history. Do you want to continue with the delete?</value>
   </data>
   <data name="StartPostComment.Text" xml:space="preserve">
-    <value>Post a comment</value>
+    <value>Postear un comentario</value>
   </data>
   <data name="StartRatingSec.Text" xml:space="preserve">
-    <value>Rating</value>
+    <value>Calificación</value>
   </data>
 </root>

@@ -187,7 +187,7 @@
     <value>WikiComment Notification</value>
   </data>
   <data name="PostComment.Text" xml:space="preserve">
-    <value>Post Comment</value>
+    <value>Postear Comentario</value>
   </data>
   <data name="PostedAt.Text" xml:space="preserve">
     <value>Posteado En</value>

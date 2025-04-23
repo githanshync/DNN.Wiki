@@ -28,6 +28,8 @@ using DotNetNuke.Wiki.Utilities;
 using System;
 using System.Globalization;
 
+using DotNetNuke.Abstractions;
+
 namespace DotNetNuke.Wiki.Views
 {
     /// <summary>
@@ -40,6 +42,17 @@ namespace DotNetNuke.Wiki.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="TopicHistory"/> class.
         /// </summary>
+        /*
+        // new: inject a INavigationManager'instance in class DNNUtils //
+        private readonly INavigationManager _navigationManager;
+
+        public TopicHistory(INavigationManager navigationManager)
+        {
+            _navigationManager = navigationManager;
+            this.Load += this.Page_Load;
+        }
+        // end of injection
+        */
         public TopicHistory()
         {
             this.Load += this.Page_Load;
@@ -152,6 +165,10 @@ namespace DotNetNuke.Wiki.Views
                 string.Empty,
                 "loc=TopicHistory",
                 "topic=" + WikiMarkup.EncodeTitle(this.PageTopic));
+            //this.BackBtn.NavigateUrl = _navigationManager.NavigateURL( //new
+            //this.TabId, // new
+            //"loc=TopicHistory", //new
+            //"topic=" + WikiMarkup.EncodeTitle(this.PageTopic));  //new
         }
 
         /// <summary>
@@ -168,6 +185,9 @@ namespace DotNetNuke.Wiki.Views
                 this.PortalSettings,
                 string.Empty,
                 "topic=" + WikiMarkup.EncodeTitle(this.PageTopic));
+            //this.BackBtn.NavigateUrl = _navigationManager.NavigateURL( // new
+            //this.TabId, //new
+            //"topic=" + WikiMarkup.EncodeTitle(this.PageTopic)); //new
         }
 
         #endregion Methods

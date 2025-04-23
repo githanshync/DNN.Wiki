@@ -121,7 +121,7 @@
     <value>Cancelar</value>
   </data>
   <data name="CommentSettings.Text" xml:space="preserve">
-    <value>Configuración de Comentarios</value>
+    <value>Configuraciones de Comentarios</value>
   </data>
   <data name="ControlTitle_administration.Text" xml:space="preserve">
     <value>Configuración Wiki</value>
@@ -154,10 +154,10 @@
     <value>Allow Pages Comments</value>
   </data>
   <data name="lblAllowPageRatings.Help" xml:space="preserve">
-    <value>Allow Page Ratings</value>
+    <value>Permitir Calificación de Página</value>
   </data>
   <data name="lblAllowPageRatings.Text" xml:space="preserve">
-    <value>Allow Page Ratings</value>
+    <value>Permitir Calificación de Página</value>
   </data>
   <data name="lblDefaultCommentsMode.Help" xml:space="preserve">
     <value>Should commends be enabled by default when creating a topic?</value>
@@ -202,7 +202,7 @@
     <value>Custom Notification Roles</value>
   </data>
   <data name="NotificationSettings.Text" xml:space="preserve">
-    <value>Notification Settings</value>
+    <value>Configuraciones de Notificación</value>
   </data>
   <data name="RatingSettings.Text" xml:space="preserve">
     <value>Configuraciones de Calificación</value>

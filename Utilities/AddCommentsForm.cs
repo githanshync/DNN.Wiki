@@ -31,6 +31,7 @@ using System.ComponentModel;
 using System.Net;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DotNetNuke.Abstractions;
 
 namespace DotNetNuke.Wiki.Utilities
 {
