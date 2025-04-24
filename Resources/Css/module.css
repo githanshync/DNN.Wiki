@@ -104,3 +104,24 @@ html[xmlns] .clearfix {
 * html .clearfix {
     height: 1%;
 }
+
+/* Styles for History table, thanks AI */
+.historyTable {
+    width: 100%;
+    border-collapse: collapse !important; /* Evita doble borde */
+}
+
+    .historyTable th, .historyTable td {
+        border: 1px solid #ddd !important; /* Bordes sutiles */
+        padding: 8px !important; /* Espaciado interno */
+        text-align: left !important;
+    }
+
+    .historyTable th {
+        background-color: #f2f2f2 !important; /* Diferencia los encabezados */
+        font-weight: bold;
+    }
+
+    .historyTable tr:nth-child(even) {
+        background-color: #f9f9f9 !important; /* Alternar colores entre filas */
+    }
