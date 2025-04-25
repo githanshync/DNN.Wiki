@@ -121,34 +121,34 @@
     <value>Ya existe una Página con ese nombre.</value>
   </data>
   <data name="NoEditAccess.Text" xml:space="preserve">
-    <value>You do not have permissions to edit content in this module.</value>
+    <value>No tiene permiso para editar contenido en este módulo</value>
   </data>
   <data name="plDescription.Help" xml:space="preserve">
-    <value>This description will get used in the Meta-Description tag for the HTML of the DotNetNuke page.</value>
+    <value>Esta descripción se usará en la etiqueta Meta-Description del HTML de la página DotNetNuke.</value>
   </data>
   <data name="plDescription.Text" xml:space="preserve">
     <value>Descripción (500 Caracteres)</value>
   </data>
   <data name="plKeywords.Help" xml:space="preserve">
-    <value>The Meta-Keywords associated with this topic.</value>
+    <value>Las meta-palabras clave asociadas con este tema.</value>
   </data>
   <data name="plKeywords.Text" xml:space="preserve">
-    <value>Keywords (500 chars)</value>
+    <value>Palabras clave (500 caracteres).</value>
   </data>
   <data name="plPageName.Help" xml:space="preserve">
-    <value>Page Name is the name that will be used in the URL for your Wiki Entry</value>
+    <value>El nombre de la página es el nombre que se usará en la URL para tu entrada en la wiki</value>
   </data>
   <data name="plPageName.Text" xml:space="preserve">
     <value>Nombre de la Página:</value>
   </data>
   <data name="plTitle.Help" xml:space="preserve">
-    <value>This is the page title that will get Displayed in the browser title, but not used in the URL.</value>
+    <value>Este es el título de la página que se mostrará en el título del navegador, pero no se usará en la URL.</value>
   </data>
   <data name="plTitle.Text" xml:space="preserve">
     <value>Título (256 caracteres)</value>
   </data>
   <data name="shSeo.Text" xml:space="preserve">
-    <value>Page Search Engine Optimization</value>
+    <value>Optimización para motores de búsqueda de la página.</value>
   </data>
   <data name="StartAllowDiscuss.Text" xml:space="preserve">
     <value>Activar Comentarios en Página</value>
@@ -184,35 +184,30 @@
             el título se mostrará como un hipervínculo en lugar del nombre de la página. 
             &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: [[Mi Enlace|Un Título]] 
             &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: [[Otro Enlace En Wiki|Puedo decir lo que
-            quiera I quiero]] &lt;BR&gt;&lt;BR&gt;* To link to Wiki Page&amp;nbsp;on another Tab you 
-            can add a Second Pipe after the Page title with the Number to the 
-            other Tab &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example using just the page name: 
-            [[My Page||35]] &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example with page title: [[My 
-            Page|My Title here|35]] &lt;BR&gt;&lt;BR&gt;* To link back to the home page make 
-            your bracket link to WikiHomePage &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: 
-            [[WikiHomePage]] &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: 
-            [[WikiHomePage|Home]] &lt;BR&gt;&lt;BR&gt;* Because we use the HTML WYSIWYG 
-            editor, email links and URLs can be added by typing them in and 
-            letting the editor handle them; or as normal&amp;nbsp;&amp;lt;a href&amp;gt; 
-            tags&amp;nbsp;in the HTML view of the 
-      editor</value>
+            quiera I quiero]] &lt;BR&gt;&lt;BR&gt;* Para enlazar a una página de la wiki&amp;nbsp;en otra pestaña, puedes agregar una segunda barra             vertical después del título de la página con el número de la otra pestaña. &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;;Ejemplo usando solo el             nombre de la página: 
+            [[Mi Página||35]] &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ejemplo con título de página: [[Mi 
+            Página|Mi Título aqui|35]] &lt;BR&gt;&lt;BR&gt;* Para enlazar de regreso a la página de inicio, usa el enlace entre corchetes a             WikiHomePage. 
+            &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ejemplo: 
+            [[WikiHomePage]] &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ejemplo: 
+            [[WikiHomePage|Home]] &lt;BR&gt;&lt;BR&gt;* Debido a que usamos el editor WYSIWYG de HTML, los enlaces de correo electrónico y             las URL pueden agregarse simplemente escribiéndolos y dejando que el editor los maneje automáticamente; o como etiquetas             normales&amp;nbsp;&amp;lt;a href&amp;gt; 
+            tags&amp;nbsp;en la vista HTML del editor.</value>
   </data>
   <data name="StartWikiDirections.Text" xml:space="preserve">
-    <value>Wiki Text Directions</value>
+    <value>Instrucciones de texto de la Wiki</value>
   </data>
   <data name="SubmitButton.Text" xml:space="preserve">
     <value>Postear Comentario</value>
   </data>
   <data name="ErrorDeletingTopic.Text" xml:space="preserve">
-    <value>An error ocurred when trying to delete the topic.</value>
+    <value>Ocurrió un error al intentar eliminar el tema.</value>
   </data>
   <data name="WarningDUPLICATENAME.Text" xml:space="preserve">
-    <value>There's already a wiki topic with the same name.</value>
+    <value>Ya existe un tema de wiki con el mismo nombre.</value>
   </data>
   <data name="JournalInsertTopicSummary.Text" xml:space="preserve">
-    <value>Added new topic [TopicName].</value>
+    <value>Nuevo tema adicionado [TopicName].</value>
   </data>
   <data name="JournalUpdateTopicSummary.Text" xml:space="preserve">
-    <value>Updated topic [TopicName].</value>
+    <value>Tema actualizado [TopicName].</value>
   </data>
 </root>

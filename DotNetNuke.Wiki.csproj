@@ -374,7 +374,9 @@
     <Content Include="Views\App_LocalResources\Administration.ascx.es-ES.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\App_LocalResources\Router.ascx.es-ES.resx" />
+    <Content Include="Views\App_LocalResources\Router.ascx.es-ES.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\App_LocalResources\SharedResources.es-ES.resx" />
@@ -386,6 +388,9 @@
     <Content Include="Views\SharedControls\App_LocalResources\WikiMenu.ascx.es-ES.resx">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SharedControls\App_LocalResources\Index.ascx.es-ES.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

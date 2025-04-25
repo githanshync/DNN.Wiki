@@ -124,22 +124,22 @@
     <value>Anónimo</value>
   </data>
   <data name="BaseCreateHistoryTableEmpty.Text" xml:space="preserve">
-    <value>This topic has no history...</value>
+    <value>Este Tema no tiene historial...</value>
   </data>
   <data name="BaseCreateTableModBy.Text" xml:space="preserve">
-    <value>   Actualizado por</value>
+    <value>Actualizado por</value>
   </data>
   <data name="BaseCreateTableModDate.Text" xml:space="preserve">
-    <value>   Actualizado en</value>
+    <value>Actualizado en</value>
   </data>
   <data name="BaseCreateTableNoResults.Text" xml:space="preserve">
-    <value>List has no results...</value>
+    <value>La lista no tiene resultados...</value>
   </data>
   <data name="BaseCreateTableTitle.Text" xml:space="preserve">
     <value>Título</value>
   </data>
   <data name="BaseCreateTableTopic.Text" xml:space="preserve">
-    <value>Topic</value>
+    <value>Tema</value>
   </data>
   <data name="CancelButton.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -163,40 +163,40 @@
     <value>Por favor ingrese un nombre</value>
   </data>
   <data name="ErrorPleaseEnterShorterComment.Text" xml:space="preserve">
-    <value>Please enter {0} or less characters for the comment.</value>
+    <value>Por favor, ingresa {0} caracteres o menos en el comentario.</value>
   </data>
   <data name="ErrorTotalFailure.Text" xml:space="preserve">
-    <value>Falló al Agregar Registro! Please Resubmit or contact the site admin.</value>
+    <value>Falló al Agregar Registro! Por favor, vuelve a enviar o contacta al administrador del sitio.</value>
   </data>
   <data name="HideNavigation.Text" xml:space="preserve">
-    <value>Hide Navigation</value>
+    <value>Ocultar Navegación</value>
   </data>
   <data name="HistoryAsOf.Text" xml:space="preserve">
-    <value>(history as of {0})</value>
+    <value>(historial hasta el {0})</value>
   </data>
   <data name="HistoryBack.Text" xml:space="preserve">
     <value>&lt;&lt; Atrás</value>
   </data>
   <data name="HistoryListHeader.Text" xml:space="preserve">
-    <value>Select what version of this topic you want to review.</value>
+    <value>Selecciona qué versión de este tema quieres revisar.</value>
   </data>
   <data name="HistoryRestore.Text" xml:space="preserve">
-    <value>Restore</value>
+    <value>Restaurar</value>
   </data>
   <data name="HistoryRestoreNotice.Text" xml:space="preserve">
-    <value>* Restore will make this version the current version</value>
+    <value>* Restaurar hará que esta versión sea la versión actual.</value>
   </data>
   <data name="HistoryTitle.Text" xml:space="preserve">
-    <value>History for</value>
+    <value>Historial de</value>
   </data>
   <data name="Home.Text" xml:space="preserve">
     <value>Inicio</value>
   </data>
   <data name="IndexOff.Text" xml:space="preserve">
-    <value>Index (Show)</value>
+    <value>Índice (Mostrar)</value>
   </data>
   <data name="IndexOn.Text" xml:space="preserve">
-    <value>Index (Hide)</value>
+    <value>Índice (Ocultar)</value>
   </data>
   <data name="Name.Text" xml:space="preserve">
     <value>Nombre</value>
@@ -259,19 +259,19 @@
     <value>Buscar Wiki</value>
   </data>
   <data name="ShowNavigation.Text" xml:space="preserve">
-    <value>Show Navigation</value>
+    <value>Mostrar navegación.</value>
   </data>
   <data name="StartAddComment.Text" xml:space="preserve">
     <value>Agregar Comentario</value>
   </data>
   <data name="StartCommentCount.Text" xml:space="preserve">
-    <value>Start Comment Count</value>
+    <value>Iniciar conteo de comentarios</value>
   </data>
   <data name="StartCommentsSection.Text" xml:space="preserve">
     <value>Comentarios</value>
   </data>
   <data name="StartDeleteWarning.Text" xml:space="preserve">
-    <value>Deleting this page will remove it and all of its history. Do you want to continue with the delete?</value>
+    <value>Eliminar esta página la quitará junto con todo su historial. ¿Deseas continuar con la eliminación?</value>
   </data>
   <data name="StartPostComment.Text" xml:space="preserve">
     <value>Postear un comentario</value>

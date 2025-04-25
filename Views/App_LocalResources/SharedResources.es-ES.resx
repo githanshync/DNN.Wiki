@@ -121,19 +121,19 @@
     <value>Cancelar</value>
   </data>
   <data name="CommentLength.Text" xml:space="preserve">
-    <value>Please enter {0} or less characters for the comment.</value>
+    <value>Por favor, ingresa {0} caracteres o menos en el comentario.</value>
   </data>
   <data name="Comments.Text" xml:space="preserve">
     <value>Comentarios</value>
   </data>
   <data name="CommentsNotification.Text" xml:space="preserve">
-    <value>Subscribe to E-Mail Notifications</value>
+    <value>Suscribirse a notificaciones por correo electrónico.</value>
   </data>
   <data name="CommentsSummary.Summary" xml:space="preserve">
-    <value>Comments Design Table</value>
+    <value>Tabla de Diseño de Comentarios</value>
   </data>
   <data name="ConfirmDelete.Text" xml:space="preserve">
-    <value>Are you sure you want to delete?</value>
+    <value>Esta seguro que quiere borrar?</value>
   </data>
   <data name="Delete.Text" xml:space="preserve">
     <value>Eliminar</value>
@@ -163,10 +163,10 @@
     <value>Example Email</value>
   </data>
   <data name="ExampleName.Text" xml:space="preserve">
-    <value>Example Name</value>
+    <value>Nombre de ejemplo</value>
   </data>
   <data name="Failed.Text" xml:space="preserve">
-    <value>Failed to Add Record! Please Resubmit or contact the site admin.</value>
+    <value>¡Error al agregar el registro! Por favor, envíalo nuevamente o contacta al administrador del sitio.</value>
   </data>
   <data name="FeedBack.Text" xml:space="preserve">
     <value>Feedback({0})</value>
@@ -181,7 +181,7 @@
     <value>Aún sin Comentarios</value>
   </data>
   <data name="NotificationBody.Text" xml:space="preserve">
-    <value>&lt;p&gt;&lt;strong&gt;[NAME]&lt;/strong&gt; posted &lt;i&gt;"[COMMENT]"&lt;/i&gt;&lt;br/&gt;@ &lt;a href="[URL]"&gt;[URL]&lt;/a&gt;&lt;/p&gt;</value>
+    <value>&lt;p&gt;&lt;strong&gt;[NAME]&lt;/strong&gt; posteado &lt;i&gt;"[COMMENT]"&lt;/i&gt;&lt;br/&gt;@ &lt;a href="[URL]"&gt;[URL]&lt;/a&gt;&lt;/p&gt;</value>
   </data>
   <data name="NotificationSubject.Text" xml:space="preserve">
     <value>WikiComment Notification</value>
@@ -190,6 +190,6 @@
     <value>Postear Comentario</value>
   </data>
   <data name="PostedAt.Text" xml:space="preserve">
-    <value>Posteado En</value>
+    <value>Posteado en</value>
   </data>
 </root>

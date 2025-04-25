@@ -127,10 +127,10 @@
     <value>Configuración Wiki</value>
   </data>
   <data name="DNNSecurityChk.Help" xml:space="preserve">
-    <value>Use DotNetNuke Security for edit content permissions</value>
+    <value>Usar la seguridad de DotNetNuke para permisos de edición de contenido.</value>
   </data>
   <data name="DNNSecurityChk.Text" xml:space="preserve">
-    <value>Use Module Security</value>
+    <value>Usar la Seguridad del Módulo.</value>
   </data>
   <data name="ExpandAll.Text" xml:space="preserve">
     <value>Expandir Todo</value>
@@ -139,19 +139,19 @@
     <value>Activate comments on all existing entries.</value>
   </data>
   <data name="lblActivateComments.Text" xml:space="preserve">
-    <value>Enable on Existing</value>
+    <value>Habilitar en existente.</value>
   </data>
   <data name="lblActivateRatings.Help" xml:space="preserve">
-    <value>Activate ratings on all pages after settings are saved!</value>
+    <value>Activar calificaciones en todas las páginas después de guardar la configuración.</value>
   </data>
   <data name="lblActivateRatings.Text" xml:space="preserve">
-    <value>Enable on Existing</value>
+    <value>Habilitar en existente.</value>
   </data>
   <data name="lblAllowPageComments.Help" xml:space="preserve">
-    <value>Allow comments for the Wiki</value>
+    <value>Permitir comentarios en la Wiki</value>
   </data>
   <data name="lblAllowPageComments.Text" xml:space="preserve">
-    <value>Allow Pages Comments</value>
+    <value>Permitir comentarios en las páginas.</value>
   </data>
   <data name="lblAllowPageRatings.Help" xml:space="preserve">
     <value>Permitir Calificación de Página</value>
@@ -160,46 +160,46 @@
     <value>Permitir Calificación de Página</value>
   </data>
   <data name="lblDefaultCommentsMode.Help" xml:space="preserve">
-    <value>Should commends be enabled by default when creating a topic?</value>
+    <value>¿Se deben habilitar los comentarios por defecto al crear un tema?</value>
   </data>
   <data name="lblDefaultCommentsMode.Text" xml:space="preserve">
-    <value>Enable Comments by Default</value>
+    <value>Habilitar comentarios por defecto.</value>
   </data>
   <data name="lblDefaultRatingMode.Help" xml:space="preserve">
-    <value>Enable ratings by default in add topic control</value>
+    <value>Habilitar calificaciones por defecto en el control de agregar tema.</value>
   </data>
   <data name="lblDefaultRatingMode.Text" xml:space="preserve">
-    <value>Enable Ratings by Default</value>
+    <value>Habilitar calificaciones por defecto.</value>
   </data>
   <data name="lblNotifyMethodCustomRoles.Help" xml:space="preserve">
-    <value>Allow users from custom roles to subscribe to notifications.</value>
+    <value>Permitir que los usuarios de roles personalizados se suscriban a notificaciones.</value>
   </data>
   <data name="lblNotifyMethodCustomRoles.Text" xml:space="preserve">
-    <value>Use Custom Notify Roles</value>
+    <value>Usar roles personalizados para notificaciones.</value>
   </data>
   <data name="lblNotifyMethodEditRoles.Help" xml:space="preserve">
-    <value>Allow users with Edit rights to subscribe to notifications.</value>
+    <value>Permitir que los usuarios con derechos de edición se suscriban a notificaciones.</value>
   </data>
   <data name="lblNotifyMethodEditRoles.Text" xml:space="preserve">
-    <value>Notify Editors</value>
+    <value>Notificar a los editores</value>
   </data>
   <data name="lblNotifyMethodUserComments.Help" xml:space="preserve">
-    <value>Allow users to be notified when new comments are added.</value>
+    <value>Permitir que los usuarios sean notificados cuando se agreguen nuevos comentarios.</value>
   </data>
   <data name="lblNotifyMethodUserComments.Text" xml:space="preserve">
-    <value>User Comments</value>
+    <value>Comentarios de usuario</value>
   </data>
   <data name="lblNotifyMethodViewRoles.Help" xml:space="preserve">
-    <value>Allow users with View rights to subscribe to notifications.</value>
+    <value>Permitir que los usuarios con derechos de visualización se suscriban a notificaciones.</value>
   </data>
   <data name="lblNotifyMethodViewRoles.Text" xml:space="preserve">
-    <value>Notify Viewers</value>
+    <value>Notificar a los que vistean.</value>
   </data>
   <data name="lblNotifyRoles.Help" xml:space="preserve">
-    <value>Custom roles that are allowed to subscribe to notifications</value>
+    <value>Roles personalizados que tienen permiso para suscribirse a notificaciones</value>
   </data>
   <data name="lblNotifyRoles.Text" xml:space="preserve">
-    <value>Custom Notification Roles</value>
+    <value>Roles personalizados para notificaciones</value>
   </data>
   <data name="NotificationSettings.Text" xml:space="preserve">
     <value>Configuraciones de Notificación</value>
@@ -214,9 +214,9 @@
     <value>Configuraciones de Seguridad</value>
   </data>
   <data name="WikiSecurity.Help" xml:space="preserve">
-    <value>If you disable Module Security you can assign which roles are allowed to edit your wiki.</value>
+    <value>Si desactivas la seguridad del módulo, puedes asignar qué roles tienen permiso para editar tu wiki.</value>
   </data>
   <data name="WikiSecurity.Text" xml:space="preserve">
-    <value>Wiki Editor Roles</value>
+    <value>Roles de editor de la Wiki.</value>
   </data>
 </root>
