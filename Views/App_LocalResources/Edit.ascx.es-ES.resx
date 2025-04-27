@@ -183,8 +183,7 @@
             título a su enlace añadiendo una barra vertical después del nombre. Al hacer esto, 
             el título se mostrará como un hipervínculo en lugar del nombre de la página. 
             &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: [[Mi Enlace|Un Título]] 
-            &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: [[Otro Enlace En Wiki|Puedo decir lo que
-            quiera I quiero]] &lt;BR&gt;&lt;BR&gt;* Para enlazar a una página de la wiki&amp;nbsp;en otra pestaña, puedes agregar una segunda barra             vertical después del título de la página con el número de la otra pestaña. &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;;Ejemplo usando solo el             nombre de la página: 
+            &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Example: [[Otro Enlace En Wiki|Puedo decir lo que I quiera]] &lt;BR&gt;&lt;BR&gt;* Para enlazar a una página de la wiki&amp;nbsp;en otra pestaña, puedes agregar una segunda barra             vertical después del título de la página con el número de la otra pestaña. &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;;Ejemplo usando solo el             nombre de la página: 
             [[Mi Página||35]] &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ejemplo con título de página: [[Mi 
             Página|Mi Título aqui|35]] &lt;BR&gt;&lt;BR&gt;* Para enlazar de regreso a la página de inicio, usa el enlace entre corchetes a             WikiHomePage. 
             &lt;BR&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;Ejemplo: 
