@@ -560,7 +560,6 @@ namespace DotNetNuke.Wiki.Utilities
             //System.Text.StringBuilder tableHTML = new System.Text.StringBuilder("<table><tr><th>"); 
             System.Text.StringBuilder tableHTML = new System.Text.StringBuilder("<table class=\"historyTable\"><tr><th>"); //  new style
             tableHTML.Append(Localization.GetString("BaseCreateTableTopic", this.RouterResourceFile));
-            tableHTML.Append(Localization.GetString("BaseCreateTableTopic", this.RouterResourceFile));
             tableHTML.Append("</th><th>");
             tableHTML.Append(Localization.GetString("BaseCreateTableModBy", this.RouterResourceFile));
             tableHTML.Append("</th><th>");
